@@ -28,7 +28,7 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: Submit to Jaguar Portal     
-      uses: saeg/jaguarportal@v1.0.0
+      uses: saeg/jaguarportal-submit@v1.0.0
       if: failure()
       with:
         jaguarPortalProjectKey:	29d79d99-2cb2-4b37-9a43-96e1bd50df85
