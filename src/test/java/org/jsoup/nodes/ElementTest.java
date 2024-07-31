@@ -1211,4 +1211,17 @@ public class ElementTest {
 	    assertFalse(hasClass);
 	        
 	}
+
+    @Test 
+    public void testIssue1() {
+        String html = "<!DOCTYPE html><html lang=\"en\"><head></head><body><div>Initial element</div></body></html>";
+        Document original = Jsoup.parse(html);
+        Document clone = original.clone();
+
+        Element cloneElement = clone.body().child(0);
+        cloneElement.after("<div>New element</div>");
+        Element cloneNextElementSibling = cloneElement.nextElementSibling();
+
+        assertEquals("New element", cloneNextElementSibling.html());
+    }
 }
