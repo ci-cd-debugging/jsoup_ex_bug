@@ -273,7 +273,7 @@ public class Element extends Node {
      */
     private List<Element> childElementsList() {
         List<Element> children;
-        if (shadowChildrenRef == null || (children = shadowChildrenRef.get()) == null || children.size() != childNodes.size()) {
+        if (shadowChildrenRef == null || (children = shadowChildrenRef.get()) == null) {
             final int size = childNodes.size();
             children = new ArrayList<>(size);
             //noinspection ForLoopReplaceableByForEach (beacause it allocates an Iterator which is wasteful here)
